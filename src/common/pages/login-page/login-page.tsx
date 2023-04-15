@@ -74,6 +74,7 @@ const LoginPage = () => {
         <VpInput
           name={FieldsNames.Password}
           label="Пароль"
+          type="password"
           error={passwordError}
           value={password}
           onChange={handleChangeInputValues}

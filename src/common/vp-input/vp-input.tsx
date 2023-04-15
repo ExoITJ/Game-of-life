@@ -5,6 +5,7 @@ import s from './vp-input.module.css';
 type Props = {
   value: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  type?: string;
   name?: string;
   label?: string;
   error?: string;
@@ -13,13 +14,15 @@ type Props = {
 };
 
 const VpInput: FC<Props> = (props) => {
-  const { value, onChange, name, label, error, disabled, className } = props;
+  const { value, onChange, type, name, label, error, disabled, className } =
+    props;
 
   return (
     <div className={clsx(s.vpInputBlock, className)}>
       {label && <label className={s.vpInputLabel}>{label}</label>}
       <input
         name={name}
+        type={type}
         value={value}
         onChange={onChange}
         disabled={disabled}

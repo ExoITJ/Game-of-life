@@ -5,7 +5,7 @@ import s from './vp-button.module.css';
 
 type Props = {
   children: ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   loading?: boolean;
   disabled?: boolean;
   className?: string;

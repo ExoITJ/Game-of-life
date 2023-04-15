@@ -43,6 +43,7 @@ export const login = createAsyncThunk(
     const { name, password } = data;
     if (!!name && !!password) {
       localStorage.setItem(LocalStorageKeys.Authenticate, 'true');
+      localStorage.setItem(LocalStorageKeys.UserName, name);
     }
     return name;
   }

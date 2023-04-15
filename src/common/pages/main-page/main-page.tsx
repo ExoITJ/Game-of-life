@@ -1,10 +1,14 @@
 import React from 'react';
 import AppContent from '../../app-content';
+import AppHeader from '../../app-header';
 
 const MainPage = () => (
-  <div>
-    <AppContent />
-  </div>
+  <>
+    <AppHeader />
+    <div>
+      <AppContent />
+    </div>
+  </>
 );
 
 export default MainPage;

@@ -12,3 +12,8 @@ export const selectIsLogin = createSelector(
   [selectSystemState],
   ({ isAuth }) => isAuth
 );
+
+export const selectUserName = createSelector(
+  [selectSystemState],
+  ({ userName }) => userName
+);
