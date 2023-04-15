@@ -1,0 +1,16 @@
+.gameSettingsBlock {
+  margin-top: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameSettingsBlock button {
+  margin-right: 15px;
+}
+
+.gameSettingsGeneration {
+  color: white;
+  font-size: 35px;
+}
