@@ -1,6 +1,6 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { AuthenticationData } from './system-types';
-import { LocalStorageKeys } from '@/common/common-consts';
+import { LocalStorageKeys } from '../../common/common-consts';
 
 type SystemState = {
   version: string | null;
