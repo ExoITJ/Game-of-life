@@ -53,11 +53,13 @@ const GameSettings: FC = () => {
   };
 
   return (
-    <div className={s.gameSettingsBlock}>
-      <VpButton onClick={handleStartGame}>Старт</VpButton>
-      <VpButton onClick={handleStop}>Стоп</VpButton>
-      <VpButton onClick={handleReset}>Сброс</VpButton>
-      <VpButton onClick={handleRandomNet}>Заполнить сетку</VpButton>
+    <div className={s.gameSettings}>
+      <div className={s.gameSettingsBlock}>
+        <VpButton onClick={handleStartGame}>Старт</VpButton>
+        <VpButton onClick={handleStop}>Стоп</VpButton>
+        <VpButton onClick={handleReset}>Сброс</VpButton>
+        <VpButton onClick={handleRandomNet}>Заполнить сетку</VpButton>
+      </div>
       <label className={s.gameSettingsGeneration}>{generation}</label>
     </div>
   );
