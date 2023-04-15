@@ -5,7 +5,6 @@ import {
   GAME_FIELD_SIZES_INFO,
   GameModes,
   GameNetSizes,
-  GameSpeeds,
   NetElement,
 } from './game-types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
@@ -15,7 +14,7 @@ type GameState = {
   net: boolean[][];
   mode: GameModes;
   netSize: GameNetSizes;
-  speed: GameSpeeds;
+  speed: number;
   generation: number;
 };
 
@@ -23,7 +22,7 @@ export const GAME_INITIALS_STATE: GameState = {
   net: calculateNewNet(DEFAULT_XAXIS, DEFAULT_YAXIS),
   mode: GameModes.Pause,
   netSize: GameNetSizes.Small,
-  speed: GameSpeeds.OneX,
+  speed: 250,
   generation: 0,
 };
 
@@ -31,7 +30,7 @@ const gameSlice = createSlice({
   name: 'game',
   initialState: GAME_INITIALS_STATE,
   reducers: {
-    resetGame: () => GAME_INITIALS_STATE,
+    resetGame: (state) => GAME_INITIALS_STATE,
     gameNextGeneration: (state) => {
       if (state.mode === GameModes.Start) {
         const storeNet = state.net;
@@ -71,7 +70,7 @@ const gameSlice = createSlice({
       const yAxis = GAME_FIELD_SIZES_INFO[payload].y;
       state.net = calculateNewNet(xAxis, yAxis);
     },
-    changeGameSpeed: (state, { payload }: PayloadAction<GameSpeeds>) => {
+    changeGameSpeed: (state, { payload }: PayloadAction<number>) => {
       state.speed = payload;
     },
     increaseGameGeneration: (state, { payload }: PayloadAction<number>) => {

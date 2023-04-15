@@ -4,12 +4,6 @@ export enum GameModes {
   Reset = 2,
 }
 
-export enum GameSpeeds {
-  OneX = 500,
-  FiveX = 200,
-  TenX = 100,
-}
-
 export enum GameNetSizes {
   Small = 'sm',
   Medium = 'md',

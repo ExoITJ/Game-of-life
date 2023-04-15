@@ -17,10 +17,12 @@ const AppHeader: FC = () => {
 
   return (
     <div className={s.appHeaderBlock}>
-      <Link to={AppRoutes.Index}>
-        <VpButton>Играть</VpButton>
-      </Link>
-      <label className={s.appHeaderUserName}>{userName}</label>
+      <div className={s.appHeaderSettingsBlock}>
+        <label className={s.appHeaderUserName}>{userName}</label>
+        <Link to={AppRoutes.Index}>
+          <VpButton>Играть</VpButton>
+        </Link>
+      </div>
       <div className={s.appHeaderSettingsBlock}>
         <Link to={AppRoutes.Rules}>
           <VpButton>Правила</VpButton>

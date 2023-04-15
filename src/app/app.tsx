@@ -5,6 +5,7 @@ import { AppRoutes } from '@/common/routes';
 import PacmanLoader from 'react-spinners/PacmanLoader';
 import { useAppSelector } from './store';
 import { selectIsLogin } from '@/features/system/system-selectors';
+import c from '../styles/common.module.css';
 
 const MainPage = lazy(() => import('../common/pages/main-page'));
 const LoginPage = lazy(() => import('../common/pages/login-page'));
@@ -14,7 +15,9 @@ const App = () => {
 
   return (
     <ErrorBoundary>
-      <Suspense fallback={<PacmanLoader />}>
+      <Suspense
+        fallback={<PacmanLoader color="darkred" className={c.centeredItem} />}
+      >
         <Routes>
           <Route
             path={AppRoutes.Any}

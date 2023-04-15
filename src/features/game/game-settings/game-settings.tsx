@@ -12,12 +12,14 @@ import {
   changeGameMode,
   changeGameNet,
   changeGameNetSize,
+  changeGameSpeed,
   gameNextGeneration,
   increaseGameGeneration,
   resetGame,
 } from '../game-slice';
 import { GameModes, GameNetSizes } from '../game-types';
 import VpSelector from '@/common/vp-selector/vp-selector';
+import VpInput from '@/common/vp-input/vp-input';
 
 const GameSettings: FC = () => {
   const dispatch = useAppDispatch();
@@ -61,6 +63,11 @@ const GameSettings: FC = () => {
     dispatch(changeGameNetSize(value as GameNetSizes));
   };
 
+  const handleChangeGameSpeed = (e: ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.currentTarget;
+    dispatch(changeGameSpeed(parseInt(value)));
+  };
+
   return (
     <div className={s.gameSettings}>
       <div className={s.gameSettingsBlock}>
@@ -78,6 +85,19 @@ const GameSettings: FC = () => {
           <option value={GameNetSizes.Large}>Большое</option>
         </VpSelector>
       </div>
+      <div className={s.gameSettingsSpeedRangeInput}>
+        <small>Меньше</small>
+        <input
+          max={500}
+          min={50}
+          step={1}
+          type="range"
+          value={speed}
+          onChange={handleChangeGameSpeed}
+        />
+        <small>Больше</small>
+      </div>
+
       <label className={s.gameSettingsGeneration}>{generation}</label>
     </div>
   );

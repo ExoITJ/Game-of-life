@@ -21,3 +21,16 @@
   color: white;
   font-size: 35px;
 }
+.gameSettingsSpeedRangeInput {
+  margin-top: 20px;
+}
+
+.gameSettingsSpeedRangeInput input {
+  direction: rtl;
+  width: 250px;
+}
+
+.gameSettingsSpeedRangeInput small {
+  color: white;
+  font-size: 14px;
+}
