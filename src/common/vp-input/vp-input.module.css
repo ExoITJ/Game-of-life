@@ -1,3 +1,8 @@
+.vpInputBlock {
+  display: flex;
+  flex-direction: column;
+}
+
 .vpInput {
   padding: 10px 20px;
 
@@ -8,4 +13,16 @@
 
   color: white;
   font-size: 18px;
+}
+
+.vpInputLabel {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.vpInputError {
+  color: red;
+  padding: 0px;
+  margin: 10px 0px 0px 0px;
 }

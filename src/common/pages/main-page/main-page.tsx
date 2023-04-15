@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAppDispatch } from '@/app/store';
 import { logout } from '@/features/system/system-slice';
-import c from '../../../styles/common.module.scss';
+import c from '../../../styles/common.module.css';
 
 const MainPage = () => {
   const dispatch = useAppDispatch();
