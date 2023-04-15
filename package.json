@@ -4,6 +4,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "webpack serve --mode development --hot --open",
+    "test": "npx jest",
     "prepare": "husky install",
     "lint": "npm eslint ./src",
     "lint:format": "npx eslint ./src --fix"
@@ -38,6 +39,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.3",
+    "jest": "^29.5.0",
     "lint-staged": "^13.2.1",
     "prettier": "^2.8.7",
     "style-loader": "^3.3.2",
@@ -53,5 +55,11 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.stories.{ts,tsx}"
+    ]
   }
 }
