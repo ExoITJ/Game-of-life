@@ -1,0 +1,19 @@
+.cursorPointer {
+  cursor: pointer !important;
+}
+
+.textLink {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.centeredItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
