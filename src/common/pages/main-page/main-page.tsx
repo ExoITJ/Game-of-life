@@ -1,20 +1,10 @@
 import React from 'react';
-import { useAppDispatch } from '@/app/store';
-import { logout } from '@/features/system/system-slice';
-import c from '../../../styles/common.module.css';
+import AppContent from '../../app-content';
 
-const MainPage = () => {
-  const dispatch = useAppDispatch();
-
-  const handleLogout = async () => {
-    await dispatch(logout());
-  };
-
-  return (
-    <div className={c.centeredItem}>
-      <button onClick={handleLogout}>Выйти</button>
-    </div>
-  );
-};
+const MainPage = () => (
+  <div>
+    <AppContent />
+  </div>
+);
 
 export default MainPage;

@@ -51,8 +51,8 @@ const LoginPage = () => {
 
     setLoadAuth(true);
     const data: AuthenticationData = {
-      name: 'Vlad',
-      password: '123',
+      name: nameTrimmed,
+      password: passwordTrimmed,
     };
     setTimeout(async () => {
       await dispatch(login(data));

@@ -24,6 +24,7 @@ describe('System slice', () => {
       system: {
         version: '1.0.0',
         isAuth: false,
+        userName: '',
       },
     };
     const store = createAppStore(initState);
@@ -39,6 +40,7 @@ describe('System slice', () => {
       system: {
         version: '1.0.0',
         isAuth: true,
+        userName: '',
       },
     };
     const store = createAppStore(initState);

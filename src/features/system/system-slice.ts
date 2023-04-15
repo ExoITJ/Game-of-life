@@ -3,13 +3,15 @@ import { AuthenticationData } from './system-types';
 import { LocalStorageKeys } from '../../common/common-consts';
 
 type SystemState = {
-  version: string | null;
+  version: string;
   isAuth: boolean;
+  userName: string;
 };
 
 export const SYSTEM_INITIAL_STATE: SystemState = {
-  version: null,
+  version: '',
   isAuth: false,
+  userName: '',
 };
 
 const systemSlice = createSlice({
@@ -22,8 +24,9 @@ const systemSlice = createSlice({
   },
   extraReducers(builder) {
     builder
-      .addCase(login.fulfilled, (state) => {
+      .addCase(login.fulfilled, (state, { payload }: PayloadAction<string>) => {
         state.isAuth = true;
+        state.userName = payload;
       })
       .addCase(logout.fulfilled, (state) => {
         state.isAuth = false;
@@ -41,6 +44,7 @@ export const login = createAsyncThunk(
     if (!!name && !!password) {
       localStorage.setItem(LocalStorageKeys.Authenticate, 'true');
     }
+    return name;
   }
 );
 
