@@ -5,10 +5,12 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './app/app';
 import './styles/index.scss';
+import { getStateFromLocalStorage } from './common/common-utils';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
-const store = createAppStore();
+const state = getStateFromLocalStorage();
+const store = createAppStore(state);
 
 root.render(
   <React.StrictMode>
