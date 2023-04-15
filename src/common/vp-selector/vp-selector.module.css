@@ -1,0 +1,28 @@
+.vpSelectBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.vpSelectLabel {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.vpSelectError {
+  color: red;
+  padding: 0px;
+  margin: 10px 0px 0px 0px;
+}
+
+.vpSelect {
+  padding: 10px 20px;
+
+  border: 1px solid red;
+  border-radius: 5px;
+
+  background-color: darkred;
+
+  color: white;
+  font-size: 18px;
+}

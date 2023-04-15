@@ -17,6 +17,7 @@ import {
   resetGame,
 } from '../game-slice';
 import { GameModes, GameNetSizes } from '../game-types';
+import VpSelector from '@/common/vp-selector/vp-selector';
 
 const GameSettings: FC = () => {
   const dispatch = useAppDispatch();
@@ -67,14 +68,15 @@ const GameSettings: FC = () => {
         <VpButton onClick={handleStop}>Стоп</VpButton>
         <VpButton onClick={handleReset}>Сброс</VpButton>
         <VpButton onClick={handleRandomNet}>Заполнить сетку</VpButton>
-        <div>
-          <label>Размер поля</label>
-          <select value={netSize} onChange={handleChangeNetSize}>
-            <option value={GameNetSizes.Small}>Малое</option>
-            <option value={GameNetSizes.Medium}>Среднее</option>
-            <option value={GameNetSizes.Large}>Большое</option>
-          </select>
-        </div>
+        <VpSelector
+          value={netSize}
+          onChange={handleChangeNetSize}
+          label="Размер поля"
+        >
+          <option value={GameNetSizes.Small}>Малое</option>
+          <option value={GameNetSizes.Medium}>Среднее</option>
+          <option value={GameNetSizes.Large}>Большое</option>
+        </VpSelector>
       </div>
       <label className={s.gameSettingsGeneration}>{generation}</label>
     </div>
