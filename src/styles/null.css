@@ -57,6 +57,13 @@ body {
 input,
 button,
 label,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 textarea {
   font-family: 'Pangolin', cursive;
 }
@@ -78,7 +85,7 @@ a:hover {
   text-decoration: none;
 }
 ul li {
-  list-style: none;
+  list-style: square;
 }
 img {
   vertical-align: top;

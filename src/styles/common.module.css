@@ -5,10 +5,10 @@
 .textLink {
   text-decoration: none;
   cursor: pointer;
+}
 
-  &:hover {
-    text-decoration: underline;
-  }
+.textLink:hover {
+  text-decoration: underline;
 }
 
 .centeredItem {
@@ -16,4 +16,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.fluidContainer {
+  width: 100%;
+  height: 100%;
 }

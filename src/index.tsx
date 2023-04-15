@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import App from './app/app';
 import './styles/index.css';
 import { getStateFromLocalStorage } from './common/common-utils';
+import { HelmetProvider } from 'react-helmet-async';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
@@ -14,10 +15,12 @@ const store = createAppStore(state);
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
 );
