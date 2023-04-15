@@ -1,0 +1,30 @@
+.vpButton {
+  display: flex;
+  align-items: center;
+
+  padding: 10px 20px;
+  border: 1px solid red;
+  border-radius: 5px;
+
+  background-color: darkred;
+  color: white;
+
+  font-size: 18px;
+}
+
+.vpButton:hover {
+  cursor: pointer;
+}
+
+.vpButton:active {
+  background-color: rgb(105, 2, 2);
+}
+
+.vpButton:disabled {
+  background-color: rgb(46, 7, 7);
+  cursor: default;
+}
+
+.loader {
+  margin-right: 8px;
+}

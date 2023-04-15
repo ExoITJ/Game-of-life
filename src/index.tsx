@@ -4,7 +4,7 @@ import { createAppStore } from './app/store';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './app/app';
-import './styles/index.scss';
+import './styles/index.css';
 import { getStateFromLocalStorage } from './common/common-utils';
 
 const container = document.getElementById('root');

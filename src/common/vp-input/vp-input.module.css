@@ -1,0 +1,11 @@
+.vpInput {
+  padding: 10px 20px;
+
+  border: 1px solid red;
+  border-radius: 5px;
+
+  background-color: darkred;
+
+  color: white;
+  font-size: 18px;
+}
