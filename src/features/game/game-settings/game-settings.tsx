@@ -19,6 +19,7 @@ import {
 } from '../game-slice';
 import { GameModes, GameNetSizes } from '../game-types';
 import VpSelector from '../../../common/vp-selector/vp-selector';
+import { GameSettingsDataTestIds } from '../game.utils';
 
 const GameSettings: FC = () => {
   const dispatch = useAppDispatch();
@@ -70,14 +71,35 @@ const GameSettings: FC = () => {
   return (
     <div className={s.gameSettings}>
       <div className={s.gameSettingsBlock}>
-        <VpButton onClick={handleStartGame}>Старт</VpButton>
-        <VpButton onClick={handleStop}>Стоп</VpButton>
-        <VpButton onClick={handleReset}>Сброс</VpButton>
-        <VpButton onClick={handleRandomNet}>Заполнить сетку</VpButton>
+        <VpButton
+          dataTestid={GameSettingsDataTestIds.StartButton}
+          onClick={handleStartGame}
+        >
+          Старт
+        </VpButton>
+        <VpButton
+          dataTestid={GameSettingsDataTestIds.StopButton}
+          onClick={handleStop}
+        >
+          Стоп
+        </VpButton>
+        <VpButton
+          dataTestid={GameSettingsDataTestIds.ResetButton}
+          onClick={handleReset}
+        >
+          Сброс
+        </VpButton>
+        <VpButton
+          dataTestid={GameSettingsDataTestIds.RandomNetButton}
+          onClick={handleRandomNet}
+        >
+          Заполнить сетку
+        </VpButton>
         <VpSelector
           value={netSize}
           onChange={handleChangeNetSize}
           label="Размер поля"
+          dataTestid={GameSettingsDataTestIds.Select}
         >
           <option value={GameNetSizes.Small}>Малое</option>
           <option value={GameNetSizes.Medium}>Среднее</option>
@@ -96,8 +118,12 @@ const GameSettings: FC = () => {
         />
         <small>Больше</small>
       </div>
-
-      <label className={s.gameSettingsGeneration}>{generation}</label>
+      <label
+        className={s.gameSettingsGeneration}
+        data-testid={GameSettingsDataTestIds.GenerationLabel}
+      >
+        {generation}
+      </label>
     </div>
   );
 };

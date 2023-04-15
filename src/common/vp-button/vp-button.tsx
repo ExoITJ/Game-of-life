@@ -9,15 +9,17 @@ type Props = {
   loading?: boolean;
   disabled?: boolean;
   className?: string;
+  dataTestid?: string;
 };
 
 const VpButton: FC<Props> = (props) => {
-  const { children, onClick, loading, disabled, className } = props;
+  const { children, onClick, loading, disabled, className, dataTestid } = props;
   return (
     <button
       className={clsx(s.vpButton, className)}
       disabled={disabled}
       onClick={onClick}
+      data-testid={dataTestid}
     >
       {loading && <ClipLoader size={15} className={s.loader} color="white" />}
       {children}

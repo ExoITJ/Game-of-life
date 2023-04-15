@@ -11,11 +11,21 @@ type Props = {
   error?: string;
   disabled?: boolean;
   className?: string;
+  dataTestid?: string;
 };
 
 const VpSelector: FC<Props> = (props) => {
-  const { value, children, onChange, name, label, error, disabled, className } =
-    props;
+  const {
+    value,
+    children,
+    onChange,
+    name,
+    label,
+    error,
+    disabled,
+    className,
+    dataTestid,
+  } = props;
 
   return (
     <div className={clsx(s.vpSelectBlock, className)}>
@@ -26,6 +36,7 @@ const VpSelector: FC<Props> = (props) => {
         onChange={onChange}
         disabled={disabled}
         className={s.vpSelect}
+        data-testid={dataTestid}
       >
         {children}
       </select>

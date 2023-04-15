@@ -2,7 +2,7 @@ import { renderWithProviders } from '../../../common/common-utils/tests/test-uti
 import { screen } from '@testing-library/react';
 import RulesScreen from './rules-screen';
 
-describe('RulesCard', () => {
+describe('RulesScreen', () => {
   test('should render component', () => {
     renderWithProviders(<RulesScreen />);
 

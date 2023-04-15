@@ -18,7 +18,7 @@ type GameState = {
   generation: number;
 };
 
-export const GAME_INITIALS_STATE: GameState = {
+export const GAME_INITIAL_STATE: GameState = {
   net: calculateNewNet(DEFAULT_XAXIS, DEFAULT_YAXIS),
   mode: GameModes.Pause,
   netSize: GameNetSizes.Small,
@@ -28,9 +28,9 @@ export const GAME_INITIALS_STATE: GameState = {
 
 const gameSlice = createSlice({
   name: 'game',
-  initialState: GAME_INITIALS_STATE,
+  initialState: GAME_INITIAL_STATE,
   reducers: {
-    resetGame: (state) => GAME_INITIALS_STATE,
+    resetGame: () => GAME_INITIAL_STATE,
     gameNextGeneration: (state) => {
       if (state.mode === GameModes.Start) {
         const storeNet = state.net;
