@@ -1,20 +1,22 @@
-import React, { FC, useRef } from 'react';
+import React, { ChangeEvent, FC, useRef } from 'react';
 import s from './game-settings.module.css';
 import VpButton from '@/common/vp-button';
 import { useAppDispatch, useAppSelector } from '@/app/store';
 import {
   selectGameGeneration,
   selectGameNet,
+  selectGameNetSize,
   selectGameSpeed,
 } from '../game-selectors';
 import {
   changeGameMode,
   changeGameNet,
+  changeGameNetSize,
   gameNextGeneration,
   increaseGameGeneration,
   resetGame,
 } from '../game-slice';
-import { GameModes } from '../game-types';
+import { GameModes, GameNetSizes } from '../game-types';
 
 const GameSettings: FC = () => {
   const dispatch = useAppDispatch();
@@ -23,6 +25,7 @@ const GameSettings: FC = () => {
   const generation = useAppSelector(selectGameGeneration);
   const speed = useAppSelector(selectGameSpeed);
   const net = useAppSelector(selectGameNet);
+  const netSize = useAppSelector(selectGameNetSize);
 
   const gameIsOn = () => {
     dispatch(gameNextGeneration());
@@ -52,6 +55,11 @@ const GameSettings: FC = () => {
     dispatch(changeGameNet(newNet));
   };
 
+  const handleChangeNetSize = (e: ChangeEvent<HTMLSelectElement>) => {
+    const { value } = e.currentTarget;
+    dispatch(changeGameNetSize(value as GameNetSizes));
+  };
+
   return (
     <div className={s.gameSettings}>
       <div className={s.gameSettingsBlock}>
@@ -59,6 +67,14 @@ const GameSettings: FC = () => {
         <VpButton onClick={handleStop}>Стоп</VpButton>
         <VpButton onClick={handleReset}>Сброс</VpButton>
         <VpButton onClick={handleRandomNet}>Заполнить сетку</VpButton>
+        <div>
+          <label>Размер поля</label>
+          <select value={netSize} onChange={handleChangeNetSize}>
+            <option value={GameNetSizes.Small}>Малое</option>
+            <option value={GameNetSizes.Medium}>Среднее</option>
+            <option value={GameNetSizes.Large}>Большое</option>
+          </select>
+        </div>
       </div>
       <label className={s.gameSettingsGeneration}>{generation}</label>
     </div>

@@ -6,8 +6,10 @@ import {
   GameModes,
   GameNetSizes,
   GameSpeeds,
+  NetElement,
 } from './game-types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import cloneDeep from 'lodash/cloneDeep';
 
 type GameState = {
   net: boolean[][];
@@ -32,28 +34,30 @@ const gameSlice = createSlice({
     resetGame: () => GAME_INITIALS_STATE,
     gameNextGeneration: (state) => {
       if (state.mode === GameModes.Start) {
-        const newNet = state.net;
+        const storeNet = state.net;
+        const netClone = cloneDeep(state.net);
+
         const xAxis = GAME_FIELD_SIZES_INFO[state.netSize].x;
         const yAxis = GAME_FIELD_SIZES_INFO[state.netSize].y;
 
         for (let i = 0; i < xAxis; i++) {
           for (let j = 0; j < yAxis; j++) {
             let count = 0;
-            if (i > 0) if (state.net[i - 1][j]) count++;
-            if (i > 0 && j > 0) if (state.net[i - 1][j - 1]) count++;
-            if (i > 0 && j < yAxis - 1) if (state.net[i - 1][j + 1]) count++;
-            if (j < yAxis - 1) if (state.net[i][j + 1]) count++;
-            if (j > 0) if (state.net[i][j - 1]) count++;
-            if (i < xAxis - 1) if (state.net[i + 1][j]) count++;
-            if (i < xAxis - 1 && j > 0) if (state.net[i + 1][j - 1]) count++;
-            if (i < xAxis - 1 && yAxis - 1)
-              if (state.net[i + 1][j + 1]) count++;
-            if (state.net[i][j] && (count < 2 || count > 3))
-              newNet[i][j] = false;
-            if (!state.net[i][j] && count === 3) newNet[i][j] = true;
+            if (i > 0) if (storeNet[i - 1][j]) count++;
+            if (i > 0 && j > 0) if (storeNet[i - 1][j - 1]) count++;
+            if (i > 0 && j < yAxis - 1) if (storeNet[i - 1][j + 1]) count++;
+            if (j < yAxis - 1) if (storeNet[i][j + 1]) count++;
+            if (j > 0) if (storeNet[i][j - 1]) count++;
+            if (i < xAxis - 1) if (storeNet[i + 1][j]) count++;
+            if (i < xAxis - 1 && j > 0) if (storeNet[i + 1][j - 1]) count++;
+            if (i < xAxis - 1 && yAxis - 1) if (storeNet[i + 1][j + 1]) count++;
+            if (storeNet[i][j] && (count < 2 || count > 3))
+              netClone[i][j] = false;
+            if (!storeNet[i][j] && count === 3) netClone[i][j] = true;
           }
         }
-        state.net = newNet;
+
+        state.net = netClone;
       }
     },
     changeGameMode: (state, { payload }: PayloadAction<GameModes>) => {
@@ -80,6 +84,12 @@ const gameSlice = createSlice({
     changeGameNet: (state, { payload }: PayloadAction<boolean[][]>) => {
       state.net = payload;
     },
+    selectGameNetElement: (state, { payload }: PayloadAction<NetElement>) => {
+      const { x, y } = payload;
+      const newNet = [...state.net];
+      newNet[x][y] = !state.net[x][y];
+      state.net = newNet;
+    },
   },
 });
 
@@ -92,4 +102,5 @@ export const {
   changeGameSpeed,
   increaseGameGeneration,
   changeGameNet,
+  selectGameNetElement,
 } = gameSlice.actions;
