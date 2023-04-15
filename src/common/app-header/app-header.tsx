@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import VpButton from '../vp-button';
 import s from './app-header.module.css';
-import { useAppDispatch, useAppSelector } from '@/app/store';
-import { selectUserName } from '@/features/system/system-selectors';
-import { logout } from '@/features/system/system-slice';
+import { useAppDispatch, useAppSelector } from '../../app/store';
+import { selectUserName } from '../../features/system/system-selectors';
+import { logout } from '../../features/system/system-slice';
 import { Link } from 'react-router-dom';
 import { AppRoutes } from '../routes';
 

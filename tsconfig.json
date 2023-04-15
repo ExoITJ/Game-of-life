@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2018",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "module": "ESNext",
     "baseUrl": "./",
     "paths": {
@@ -9,7 +9,7 @@
       "components/*": ["src/common"],
       "@/*": ["src/*"]
     },
-    "allowJs": false,
+    "allowJs": true,
     "sourceMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -17,8 +17,9 @@
     "noImplicitAny": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "lib": ["dom", "dom.iterable", "esnext"]
   },
-  "include": ["src/**/*", "declarations.d.ts"],
+  "include": ["src", "declarations.d.ts"],
   "exclude": ["node_modules"]
 }

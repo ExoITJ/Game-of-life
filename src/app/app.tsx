@@ -1,10 +1,10 @@
 import React, { Suspense, lazy } from 'react';
-import ErrorBoundary from '@/common/error-boundary';
+import ErrorBoundary from '../common/error-boundary';
 import { Route, Routes } from 'react-router-dom';
-import { AppRoutes } from '@/common/routes';
+import { AppRoutes } from '../common/routes';
 import PacmanLoader from 'react-spinners/PacmanLoader';
 import { useAppSelector } from './store';
-import { selectIsLogin } from '@/features/system/system-selectors';
+import { selectIsLogin } from '../features/system/system-selectors';
 import c from '../styles/common.module.css';
 
 const MainPage = lazy(() => import('../common/pages/main-page'));

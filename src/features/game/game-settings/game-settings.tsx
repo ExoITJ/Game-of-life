@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC, useRef } from 'react';
 import s from './game-settings.module.css';
-import VpButton from '@/common/vp-button';
-import { useAppDispatch, useAppSelector } from '@/app/store';
+import VpButton from '../../../common/vp-button';
+import { useAppDispatch, useAppSelector } from '../../../app/store';
 import {
   selectGameGeneration,
   selectGameNet,
@@ -18,8 +18,7 @@ import {
   resetGame,
 } from '../game-slice';
 import { GameModes, GameNetSizes } from '../game-types';
-import VpSelector from '@/common/vp-selector/vp-selector';
-import VpInput from '@/common/vp-input/vp-input';
+import VpSelector from '../../../common/vp-selector/vp-selector';
 
 const GameSettings: FC = () => {
   const dispatch = useAppDispatch();

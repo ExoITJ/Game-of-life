@@ -1,4 +1,4 @@
-import { calculateNewNet } from '@/common/common-utils/game';
+import { calculateNewNet } from '../../common/common-utils/game';
 import {
   DEFAULT_XAXIS,
   DEFAULT_YAXIS,

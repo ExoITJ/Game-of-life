@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import s from './game-net.module.css';
-import { useAppDispatch, useAppSelector } from '@/app/store';
+import { useAppDispatch, useAppSelector } from '../../../app/store';
 import { selectGameNet, selectGameNetYAxis } from '../game-selectors';
 import clsx from 'clsx';
 import { selectGameNetElement } from '../game-slice';

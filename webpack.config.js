@@ -11,11 +11,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
-    alias: {
-      types: path.resolve(__dirname, 'src/types'),
-      components: path.resolve(__dirname, 'src/features'),
-      '@': path.resolve(__dirname, 'src'),
-    },
   },
   devServer: {
     port: 3000,
@@ -27,17 +22,40 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(sa|sc|c)ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.(jpg|jpeg|png|svg)/,
-        use: ['file-loader'],
-      },
-      {
         test: /\.(ts)x?$/,
-        loader: 'babel-loader',
         exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react',
+              '@babel/preset-typescript',
+            ],
+          },
+        },
+      },
+      {
+        test: /(?<!\.module)\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /(?<=\.module)\.css$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[name]_[local]-[hash:base64:5]',
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(jpg|jpeg|png|svg|ico|gif)/,
+        use: ['file-loader'],
       },
     ],
   },

@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
-import { useAppDispatch } from '@/app/store';
-import { login } from '@/features/system/system-slice';
+import { useAppDispatch } from '../../../app/store';
+import { login } from '../../../features/system/system-slice';
 import { AuthenticationData } from '@/features/system/system-types';
 import VpButton from '../../vp-button/vp-button';
 import VpInput from '../../vp-input/vp-input';
