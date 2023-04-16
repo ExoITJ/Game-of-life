@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import s from './about-page-three.module.css';
-import Xarrow, { Xwrapper } from 'react-xarrows';
+import Xarrow from 'react-xarrows';
 
 const AboutPageThree: FC = () => {
   return (

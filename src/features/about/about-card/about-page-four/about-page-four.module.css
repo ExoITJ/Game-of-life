@@ -1,0 +1,43 @@
+.aboutPageFourBlock {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconWithDesc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.tools {
+  width: 1200px;
+  border: 1px dashed lightgray;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.toolsFlex {
+  display: flex;
+
+  border: 1px dashed lightgray;
+  border-radius: 5px;
+}
+
+.innerTools {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.innerTools h6 {
+  height: 50px;
+  font-size: 22px;
+  margin: 10px 0px 20px 0px;
+  text-align: center;
+}
