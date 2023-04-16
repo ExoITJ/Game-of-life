@@ -32,6 +32,11 @@ const AppHeader: FC = () => {
         </Link>
       </div>
       <div className={s.appHeaderSettingsBlock}>
+        <Link to={AppRoutes.About}>
+          <VpButton data-testid={AppHeaderDataTestIds.AboutButtonLink}>
+            О проекте
+          </VpButton>
+        </Link>
         <Link to={AppRoutes.Rules}>
           <VpButton data-testid={AppHeaderDataTestIds.RulesButtonLink}>
             Правила

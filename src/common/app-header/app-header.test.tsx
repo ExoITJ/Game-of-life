@@ -13,6 +13,9 @@ describe('AppHeader', () => {
     const rulesButton = screen.getByTestId(
       AppHeaderDataTestIds.RulesButtonLink
     );
+    const aboutButton = screen.getByTestId(
+      AppHeaderDataTestIds.AboutButtonLink
+    );
     const logoutButton = screen.getByTestId(AppHeaderDataTestIds.LogoutButton);
     const userNameLabel = screen.getByTestId(
       AppHeaderDataTestIds.UserNameLabel
@@ -20,6 +23,7 @@ describe('AppHeader', () => {
 
     expect(gameButton).toBeInTheDocument();
     expect(rulesButton).toBeInTheDocument();
+    expect(aboutButton).toBeInTheDocument();
     expect(logoutButton).toBeInTheDocument();
     expect(userNameLabel).toBeInTheDocument();
   });

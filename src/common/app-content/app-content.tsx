@@ -5,6 +5,7 @@ import { AppRoutes } from '../routes';
 
 const GameScreen = lazy(() => import('../../features/game/game-screen'));
 const RulesScreen = lazy(() => import('../../features/rules/rules-screen'));
+const AboutScreen = lazy(() => import('../../features/about/about-screen'));
 
 const AppContent: FC = () => {
   return (
@@ -14,6 +15,7 @@ const AppContent: FC = () => {
           <Route path={AppRoutes.Any} element={<div>Страница 404</div>} />
           <Route path={AppRoutes.Index} element={<GameScreen />} />
           <Route path={AppRoutes.Rules} element={<RulesScreen />} />
+          <Route path={AppRoutes.About} element={<AboutScreen />} />
         </Routes>
       </ErrorBoundary>
     </Suspense>
