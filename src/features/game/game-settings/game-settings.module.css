@@ -5,7 +5,7 @@
 }
 
 .gameSettingsBlock {
-  margin-top: 50px;
+  margin-top: 15px;
 
   display: flex;
   align-items: end;
@@ -17,7 +17,7 @@
 }
 
 .gameSettingsGeneration {
-  margin-top: 30px;
+  margin-top: 10px;
   color: white;
   font-size: 35px;
 }
