@@ -6,6 +6,7 @@ import { selectUserName } from '../../features/system/system-selectors';
 import { logout } from '../../features/system/system-slice';
 import { Link } from 'react-router-dom';
 import { AppRoutes } from '../routes';
+import { AppHeaderDataTestIds } from './app-header.utils';
 
 const AppHeader: FC = () => {
   const dispatch = useAppDispatch();
@@ -18,16 +19,30 @@ const AppHeader: FC = () => {
   return (
     <div className={s.appHeaderBlock}>
       <div className={s.appHeaderSettingsBlock}>
-        <label className={s.appHeaderUserName}>{userName}</label>
+        <label
+          className={s.appHeaderUserName}
+          data-testid={AppHeaderDataTestIds.UserNameLabel}
+        >
+          {userName}
+        </label>
         <Link to={AppRoutes.Index}>
-          <VpButton>Играть</VpButton>
+          <VpButton data-testid={AppHeaderDataTestIds.GameButtonLink}>
+            Играть
+          </VpButton>
         </Link>
       </div>
       <div className={s.appHeaderSettingsBlock}>
         <Link to={AppRoutes.Rules}>
-          <VpButton>Правила</VpButton>
+          <VpButton data-testid={AppHeaderDataTestIds.RulesButtonLink}>
+            Правила
+          </VpButton>
         </Link>
-        <VpButton onClick={handleLogout}>Выход</VpButton>
+        <VpButton
+          onClick={handleLogout}
+          data-testid={AppHeaderDataTestIds.LogoutButton}
+        >
+          Выход
+        </VpButton>
       </div>
     </div>
   );

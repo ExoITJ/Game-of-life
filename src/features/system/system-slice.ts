@@ -30,6 +30,7 @@ const systemSlice = createSlice({
       })
       .addCase(logout.fulfilled, (state) => {
         state.isAuth = false;
+        state.userName = '';
       });
   },
 });
