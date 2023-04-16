@@ -1,0 +1,10 @@
+.controlButtons {
+  position: fixed;
+  top: 93%;
+  left: 20px;
+
+  display: flex;
+  justify-content: end;
+
+  z-index: 10;
+}

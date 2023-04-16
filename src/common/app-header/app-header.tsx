@@ -7,6 +7,7 @@ import { logout } from '../../features/system/system-slice';
 import { Link } from 'react-router-dom';
 import { AppRoutes } from '../routes';
 import { AppHeaderDataTestIds } from './app-header.utils';
+import { SiGithub } from 'react-icons/si';
 
 const AppHeader: FC = () => {
   const dispatch = useAppDispatch();
@@ -49,6 +50,14 @@ const AppHeader: FC = () => {
           Выход
         </VpButton>
       </div>
+      <VpButton
+        data-testid={AppHeaderDataTestIds.LogoutButton}
+        className={s.gitHubButton}
+      >
+        <a href="https://github.com/ExoITJ/Game-of-life" target="_blank">
+          <SiGithub size={23} />
+        </a>
+      </VpButton>
     </div>
   );
 };

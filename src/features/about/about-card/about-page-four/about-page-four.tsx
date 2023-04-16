@@ -12,8 +12,17 @@ import {
   SiReactrouter,
 } from 'react-icons/si';
 import Xarrow from 'react-xarrows';
+import VpButton from '../../../../common/vp-button';
+import { IoIosArrowUp } from 'react-icons/io';
 
 const AboutPageFour: FC = () => {
+  const handleScrollWindowToUp = () => {
+    return window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <div className={s.aboutPageFourBlock}>
       <div className={s.tools} id="tools">
@@ -73,6 +82,9 @@ const AboutPageFour: FC = () => {
           </div>
         </div>
       </div>
+      <VpButton className={s.controlButton} onClick={handleScrollWindowToUp}>
+        <IoIosArrowUp size={20} />
+      </VpButton>
       <Xarrow
         start="plans"
         end="tools"
