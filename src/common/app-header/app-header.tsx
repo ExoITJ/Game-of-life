@@ -51,7 +51,7 @@ const AppHeader: FC = () => {
         </VpButton>
       </div>
       <VpButton
-        data-testid={AppHeaderDataTestIds.LogoutButton}
+        data-testid={AppHeaderDataTestIds.GithubButtonLink}
         className={s.gitHubButton}
       >
         <a href="https://github.com/ExoITJ/Game-of-life" target="_blank">

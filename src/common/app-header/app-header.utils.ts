@@ -4,4 +4,5 @@ export const enum AppHeaderDataTestIds {
   AboutButtonLink = 'app-header-about-button-link',
   LogoutButton = 'app-header-logout-button',
   UserNameLabel = 'app-header-user-name-label',
+  GithubButtonLink = 'app-header-github-button-link',
 }

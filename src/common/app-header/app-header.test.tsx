@@ -20,12 +20,16 @@ describe('AppHeader', () => {
     const userNameLabel = screen.getByTestId(
       AppHeaderDataTestIds.UserNameLabel
     );
+    const githubButton = screen.getByTestId(
+      AppHeaderDataTestIds.GithubButtonLink
+    );
 
     expect(gameButton).toBeInTheDocument();
     expect(rulesButton).toBeInTheDocument();
     expect(aboutButton).toBeInTheDocument();
     expect(logoutButton).toBeInTheDocument();
     expect(userNameLabel).toBeInTheDocument();
+    expect(githubButton).toBeInTheDocument();
   });
 
   test('should render user name', () => {
