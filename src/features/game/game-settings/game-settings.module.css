@@ -22,7 +22,7 @@
   font-size: 35px;
 }
 .gameSettingsSpeedRangeInput {
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .gameSettingsSpeedRangeInput input {
@@ -31,6 +31,13 @@
 }
 
 .gameSettingsSpeedRangeInput small {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.gameSettingsSpeedLabel {
+  margin-top: 15px;
   color: white;
   font-size: 14px;
 }

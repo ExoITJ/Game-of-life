@@ -106,8 +106,9 @@ const GameSettings: FC = () => {
           <option value={GameNetSizes.Large}>Большое</option>
         </VpSelector>
       </div>
+      <small className={s.gameSettingsSpeedLabel}>Скорость</small>
       <div className={s.gameSettingsSpeedRangeInput}>
-        <small>Меньше</small>
+        <small>-</small>
         <input
           max={500}
           min={50}
@@ -116,7 +117,7 @@ const GameSettings: FC = () => {
           value={speed}
           onChange={handleChangeGameSpeed}
         />
-        <small>Больше</small>
+        <small>+</small>
       </div>
       <label
         className={s.gameSettingsGeneration}
