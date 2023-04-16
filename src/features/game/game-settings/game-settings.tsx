@@ -72,25 +72,25 @@ const GameSettings: FC = () => {
     <div className={s.gameSettings}>
       <div className={s.gameSettingsBlock}>
         <VpButton
-          dataTestid={GameSettingsDataTestIds.StartButton}
+          data-testid={GameSettingsDataTestIds.StartButton}
           onClick={handleStartGame}
         >
           Старт
         </VpButton>
         <VpButton
-          dataTestid={GameSettingsDataTestIds.StopButton}
+          data-testid={GameSettingsDataTestIds.StopButton}
           onClick={handleStop}
         >
           Стоп
         </VpButton>
         <VpButton
-          dataTestid={GameSettingsDataTestIds.ResetButton}
+          data-testid={GameSettingsDataTestIds.ResetButton}
           onClick={handleReset}
         >
           Сброс
         </VpButton>
         <VpButton
-          dataTestid={GameSettingsDataTestIds.RandomNetButton}
+          data-testid={GameSettingsDataTestIds.RandomNetButton}
           onClick={handleRandomNet}
         >
           Заполнить сетку
@@ -99,7 +99,7 @@ const GameSettings: FC = () => {
           value={netSize}
           onChange={handleChangeNetSize}
           label="Размер поля"
-          dataTestid={GameSettingsDataTestIds.Select}
+          data-testid={GameSettingsDataTestIds.Select}
         >
           <option value={GameNetSizes.Small}>Малое</option>
           <option value={GameNetSizes.Medium}>Среднее</option>

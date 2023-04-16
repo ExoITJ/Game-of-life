@@ -1,30 +1,31 @@
-import React, { FC, ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, FC } from 'react';
 import { clsx } from 'clsx';
 import ClipLoader from 'react-spinners/ClipLoader';
 import s from './vp-button.module.css';
 
-type Props = {
-  children: ReactNode;
-  onClick?: () => void;
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   loading?: boolean;
-  disabled?: boolean;
-  className?: string;
-  dataTestid?: string;
 };
 
-const VpButton: FC<Props> = (props) => {
-  const { children, onClick, loading, disabled, className, dataTestid } = props;
-  return (
-    <button
-      className={clsx(s.vpButton, className)}
-      disabled={disabled}
-      onClick={onClick}
-      data-testid={dataTestid}
-    >
-      {loading && <ClipLoader size={15} className={s.loader} color="white" />}
-      {children}
-    </button>
-  );
-};
+export const SPINNER_TEST_ID = 'vp-button-spinner';
+
+const VpButton: FC<Props> = ({
+  children,
+  loading,
+  className,
+  ...restProps
+}) => (
+  <button className={clsx(s.vpButton, className)} {...restProps}>
+    {loading && (
+      <ClipLoader
+        size={15}
+        className={s.loader}
+        color="white"
+        data-testid={SPINNER_TEST_ID}
+      />
+    )}
+    {children}
+  </button>
+);
 
 export default VpButton;
