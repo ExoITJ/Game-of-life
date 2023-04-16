@@ -6,6 +6,7 @@ import VpButton from '../../vp-button/vp-button';
 import VpInput from '../../vp-input/vp-input';
 import { ValidationErrors } from '../../common-consts';
 import s from './login-page.module.css';
+import { LoginPageDataTestIds } from './login-page.utils';
 
 const enum FieldsNames {
   Name = 'login',
@@ -70,6 +71,7 @@ const LoginPage = () => {
           value={name}
           onChange={handleChangeInputValues}
           className={s.loginPageCardComponent}
+          data-testid={LoginPageDataTestIds.LoginInput}
         />
         <VpInput
           name={FieldsNames.Password}
@@ -79,11 +81,13 @@ const LoginPage = () => {
           value={password}
           onChange={handleChangeInputValues}
           className={s.loginPageCardComponent}
+          data-testid={LoginPageDataTestIds.PasswordInput}
         />
         <VpButton
           className={s.loginPageCardComponent}
           onClick={handleAuth}
           loading={loadAuth}
+          data-testid={LoginPageDataTestIds.SubmitButton}
         >
           Войти
         </VpButton>
